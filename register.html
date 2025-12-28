@@ -1,0 +1,18 @@
+{% extends "blogs/base.html" %}
+
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-body">
+          <h2 class="card-title mb-4">注册新账户</h2>
+          <form method="post" action="{% url 'blogs:register' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button name="submit" class="btn btn-primary w-100">注册</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

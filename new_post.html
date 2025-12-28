@@ -1,0 +1,6 @@
+<h2>添加博文</h2>
+<form action="{% url 'blogs:new_post' %}" method='post'>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button name="submit">发布</button>
+</form>
